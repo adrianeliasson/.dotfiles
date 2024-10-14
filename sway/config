@@ -230,13 +230,22 @@ input * {
     xkb_options "grp:win_space_toggle"
 }
 
-output DP-3 pos 0 0
-output DP-5 pos 2560 0
-output eDP-1 pos 5120 0
+# Run xrandr to find the names of the displays
+set $display1 DP-3
+set $display2 DP-5
+set $display3 eDP-1
 
-workspace 1 output DP-3
-workspace 2 output DP-5
-workspace 3 output eDP-1
+output $display1 pos 0 0
+output $display2 pos 2560 0
+output $display3 pos 5120 0
+
+workspace 1 output $display1
+workspace 2 output $display2
+workspace 3 output $display3
 
 include /etc/sway/config.d/*
 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
