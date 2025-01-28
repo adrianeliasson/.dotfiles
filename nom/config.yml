@@ -1,0 +1,17 @@
+configpath: /home/adriane/.config/nom/config.yml
+showfavourites: false
+version: ""
+feeds:
+    - url: https://verraes.net/feed.atom
+    - url: https://ratfactor.com/atom.xml
+    - url: https://www.datagubbe.se/atom.xml
+    - url: https://gremlin.bearblog.dev/feed/
+ordering: asc
+theme:
+    glamour: dark
+    titleColor: "62"
+    filterColor: "62"
+    selectedItemColor: "170"
+    readIcon: ✓
+http:
+    mintls: TLS 1.2
