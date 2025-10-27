@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "modules-left": ["custom/media"],
-    "modules-right": ["custom/keyboard", "network", "battery", "pulseaudio", "clock", "custom/quit"],
+    "modules-right": ["custom/keyboard", "network", "custom/ping", "battery", "pulseaudio", "clock", "custom/quit"],
     "clock": {
         "format": "{:%H:%M}",
         "format-alt": "{:%a %b %d}",
@@ -34,6 +34,11 @@
         "format": "{}",
         "interval": 1,
         "exec": "$HOME/.config/waybar/get_media.sh"
+    },
+    "custom/ping": {
+	"format": "ping: {}",
+	"interval": 1,
+	"exec": "$HOME/.config/waybar/get_ping.sh"
     },
     "custom/keyboard": {
         "format": " {}",
