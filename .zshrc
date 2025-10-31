@@ -81,7 +81,7 @@ alias plejdvpn="sudo whoami && xdg-open \"https://vpn.plejd.site:443/remote/saml
 
 alias iac_dev="(grt && ./build.sh -p plejd-dev-admin -w development -r eu-west-1)"
 alias iac_stage="(grt && ./build.sh -p plejd-stage-admin -w staging -r eu-west-1)"
-alias iac_stage="(grt && ./build.sh -p plejd-management-admin -w production -r eu-west-1)"
+# alias iac_prod="(grt && ./build.sh -p plejd-management-admin -w production -r eu-west-1)"
 alias k="kubectl"
 alias nsc="XDG_CONFIG_HOME=. XDG_DATA_HOME=. /usr/bin/nsc"
 
