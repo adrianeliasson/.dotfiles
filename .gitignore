@@ -4,23 +4,16 @@
 !/.gitignore
 !/.README.md
 
-!/.zshrc
-
-!/.config
-/.config/*
-
-!/.config/mako
-!/.config/waybar
-!/.config/sway
-!/.config/swaylock
-# !/.config/obsidian
-!/.config/nvim
-!/.config/ghostty
-!/.config/tmux
-!/.config/BraveSoftware/Brave-Browser/Default/Preferences
-!/.config/starship.toml
-!/.config/pip
-
-!/.config/nom
-/.config/nom/*
-!/.config/nom/config.yml
+!/zsh
+!/bash
+!/mako
+!/waybar
+!/sway
+!/swaylock
+!/nvim
+!/ghostty
+!/tmux
+!/BraveSoftware/Brave-Browser/Default/Preferences
+!/starship.toml
+!/pip
+!/nom
