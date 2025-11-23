@@ -1,0 +1,108 @@
+
+add_newline = true
+command_timeout = 400
+# format = '$all$directory$character'
+# A minimal left prompt
+# move the rest of the prompt to the right
+
+[character]
+success_symbol = "[  ](fg:#7dcfff)"
+error_symbol = "[  ](fg:#F05954)"
+vicmd_symbol = "[ ](purple)"
+format = ' $symbol'
+
+[git_state]
+disabled = false
+
+[git_status]
+format = '([$all_status]($style))'
+conflicted = "([⚠️ ${count}](bold red) )"
+ahead = "([⟫${count}])"
+behind = "([⟪${count}])"
+# stashed = "([ ${count}](bold red)) "
+stashed = "([ ${count}](bold red)) "
+modified = "([ ${count}](bold yellow) )"
+staged = "([ ${count}](bold green) )"
+renamed = "([⇆ ${count}](vold blue) )"
+deleted = "([ ${count}](bold red) )"
+untracked = "([ ${count}](dimmed red) )"
+
+
+# -----------------
+#     BATTERY
+# -----------------
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+discharging_symbol = '💦'
+
+[cmd_duration]
+disabled = true
+
+# -----------------
+#     KUBERNETES
+# -----------------
+[kubernetes]
+format = 'k8 [$symbol  ($context )]($style)'
+disabled = false
+# detect_files = ['value.yaml', 'Chart.yaml']
+contexts = [
+]
+
+[git_branch]
+symbol = '󰘬 '
+truncation_length = 25
+
+[nodejs]
+symbol = ' '
+
+[nats]
+disabled = false
+
+[aws]
+disabled = false
+symbol = '󰅟 '
+expiration_symbol = '󰅤 '
+
+[aws.region_aliases]
+eu-west-1 = 'ew1'
+eu-north-1 = 'en1'
+
+[azure]
+disabled = true
+# -----------------
+#     Helm
+# -----------------
+[helm]
+disabled = true
+
+# -----------------
+#     Package
+# -----------------
+[package]
+disabled = true
+
+# -----------------
+#     Time
+# -----------------
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+time_format = '%T'
+utc_time_offset = '+2'
+time_range = '14:30:00-18:00:00'
+
+[directory]
+read_only = ' 󰌾'
+truncation_symbol = '.../'
+truncate_to_repo = false
+truncation_length = 3
