@@ -64,29 +64,3 @@ alias pipvenv="python -m venv .venv;source .venv/bin/activate"
 
 # PATH
 export PATH=$PATH:/home/adriane/.kubescape/bin
-
-
-#######################
-# Plejd specific edits
-#######################
-
-alias bcomp="bcompare" # Required in nats-accounts for running certain scripts that run bcomp instead of bcompare
-alias awsauth="plsh-aws-auth"
-alias plejdvpn="sudo whoami && xdg-open \"https://vpn.plejd.site:443/remote/saml/start?redirect=1\" && sudo openfortivpn vpn.plejd.site:443 --use-resolvconf=1 --trusted-cert ${plejd_vpn_trusted_cert} --saml-login" # Cert defined in zshenv
-
-# PLSH-BEGIN source to install folder, Please do not remove this!
-[ -d "/home/adriane/.config/plejd/plejd_shell/source.d" ] && for f in /home/adriane/.config/plejd/plejd_shell/source.d/*; do source $f; done
-# PATH=/home/adriane/.config/plejd/plejd_shell/pkg/:${PATH}
-# PLSH-END, do not remove this marker
-
-alias iac_dev="(grt && ./build.sh -p plejd-dev-admin -w development -r eu-west-1)"
-alias iac_stage="(grt && ./build.sh -p plejd-stage-admin -w staging -r eu-west-1)"
-# alias iac_prod="(grt && ./build.sh -p plejd-management-admin -w production -r eu-west-1)"
-alias k="kubectl"
-alias nsc="XDG_CONFIG_HOME=. XDG_DATA_HOME=. /usr/bin/nsc"
-
-# nsc aliases
-# alias ndo="nsc describe operator"
-# alias nda="nsc describe account"
-# alias ndu="nsc describe user"
-# alias nlk="nsc list keys"
