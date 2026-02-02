@@ -5,8 +5,6 @@ rm -rf \
   ~/.config/starship.toml \
   ~/.config/tmux/tmux.conf
 
-cd "$REPO_NAME"
-
 # Make backup of bashrc first
 mkdir -p "${HOME}/.backup"
 cp "${HOME}/.bashrc" "${HOME}/.backup/.bashrc.$(date +%s).bak"
