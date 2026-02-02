@@ -1,6 +1,7 @@
 [user]
   name = Adrian Eliasson
   email = 31988563+adrianeliasson@users.noreply.github.com
+  signingkey = ~/.ssh/id_ed25519.pub
 
 [commit]
   gpgsign = true
