@@ -45,18 +45,30 @@ alias lg='lazygit'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 
 # Teach me to use type
-_which_override() { # ignores following arguments that I might pass
-    # TODO: For interactive shell this is fine,
-    # but for scripts, `which` can be used to
-    # get the path to binaries. This is a crude
-    # solution, and maybe I will remove it soon.
-    echo "use type instead: type $1"
-}
-alias which='_which_override'
+# _which_override() { # ignores following arguments that I might pass
+#     # TODO: For interactive shell this is fine,
+#     # but for scripts, `which` can be used to
+#     # get the path to binaries. This is a crude
+#     # solution, and maybe I will remove it soon.
+#     echo "use type instead: type $1"
+# }
+# alias which='_which_override'
 alias pipvenv="python -m venv .venv;source .venv/bin/activate"
+alias task="go-task"
+alias shellcheck='docker run --rm -it -v "$(pwd):/mnt" koalaman/shellcheck:stable'
 
 #
 # Work specific overrides/imports
 #
 # The path should be defined in the .bash_profile file
-[[ -f "${WORK_SPECIFIC_SCRIPTS_PATH}" ]] && source "${WORK_SPECIFIC_SCRIPTS_PATH}"
+if [[ -f "${WORK_SPECIFIC_SCRIPTS_PATH}" ]]; then
+  source "${WORK_SPECIFIC_SCRIPTS_PATH}"
+else
+  echo "Could not source work files using path: ${WORK_SPECIFIC_SCRIPTS_PATH}"
+fi
+
+source /usr/share/nvm/init-nvm.sh
+
+source <(kubectl completion bash)
+alias k="kubectl"
+complete -o default -F __start_kubectl k

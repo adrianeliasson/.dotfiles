@@ -1,5 +1,18 @@
+[user]
+  name = Adrian Eliasson
+  email = 31988563+adrianeliasson@users.noreply.github.com
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  format = ssh
+
+[core]
+  sshCommand = ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes
+
 [includeIf "gitdir:~/Work/"]
-    path = ~/Work/.gitconfig
+  path = ~/.gitconfig-work
 
 [includeIf "gitdir:~/Personal/"]
-    path = ~/Personal/.gitconfig
+  path = ~/.gitconfig-personal
