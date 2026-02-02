@@ -39,8 +39,6 @@ alias ....='cd ../../..'
 alias d='docker'
 n() { if [ "$#" -eq 0 ]; then nvim .; else nvim "$@"; fi; }
 
-source <(nsc completion bash)
-
 alias lg='lazygit'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 
