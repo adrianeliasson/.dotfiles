@@ -61,12 +61,12 @@ alias shellcheck='docker run --rm -it -v "$(pwd):/mnt" koalaman/shellcheck:stabl
 # The path should be defined in the .bash_profile file
 if [[ -f "${WORK_SPECIFIC_SCRIPTS_PATH}" ]]; then
   source "${WORK_SPECIFIC_SCRIPTS_PATH}"
-else
-  echo "Could not source work files using path: ${WORK_SPECIFIC_SCRIPTS_PATH}"
 fi
 
+# TODO: Consider using mise
 source /usr/share/nvm/init-nvm.sh
 
+# KubeCTL
 source <(kubectl completion bash)
 alias k="kubectl"
 complete -o default -F __start_kubectl k
